@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercícios</title>
+    <style>
+        .mensagem{
+            padding: 16px;
+            border-radius: 8px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            box-shadow: 1px 1px 4px 0px #858585;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de exercícios</h1>
+</body>
+<script>
+    //Exercicio 01
+        const nome = "Matheus"
+
+        function saudacaoPersonalizada(nome)
+        {
+            document.write(`<p class="mensagem">Olá <strong>${nome}</strong>! Bem-vindo(a) a calculadora universal</p>`)
+        }
+
+        saudacaoPersonalizada(nome)
+
+    //Exercicio 02
+        const num1 = 10
+        const num2 = 10
+        const operador = "-"
+        
+        function operacaoMatematica(num1, operador, num2)
+        {
+            return eval(`${num1} ${operador} ${num2}`)
+        }
+
+        document.write(`<p class="mensagem">O resultado da operação ${num1} ${operador} ${num2} é igual a ${operacaoMatematica(num1, operador, num2)}</p>`)
+
+    //Exercicio 03
+        const numero = 10
+        const calcularDobro = function (numero) 
+        {
+            return numero * 2
+        }
+
+        document.write(`<p class="mensagem">O dobro de ${numero} é igual a ${calcularDobro(numero)}</p>`)
+
+    //Exercicio 04
+        const numero_metade = 2
+        const calcularMetade = numero => numero / 2
+
+        document.write(`<p class="mensagem">A metade de ${numero_metade} é igual a ${calcularMetade(numero_metade)}</p>`)
+
+    //Exercicio 05
+        const calculadoraUniversal = (function(){document.write(`<p class="mensagem">Calculadora universal pronta para uso</p>`)})()
+</script>
+</html>
