@@ -5,12 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de exercícios</title>
     <style>
-        .mensagem{
+        p{
             padding: 16px;
             border-radius: 8px;
             border-radius: 8px;
             margin-bottom: 16px;
             box-shadow: 1px 1px 4px 0px #858585;
+            max-width: 500px;
+            cursor: pointer;
+        }
+        span{
+            display: block;
+            width: fit-content;
+            border-radius: 8px;
+            background-color: #bef3c0;
+            padding: 4px 8px;
+            margin-bottom: 8px;
+        }
+        p:hover{
+            transition: 0.3s;
+            background-color: #f3f3f3;
         }
     </style>
 </head>
@@ -23,7 +37,7 @@
 
         function saudacaoPersonalizada(nome)
         {
-            document.write(`<p class="mensagem">Olá <strong>${nome}</strong>! Bem-vindo(a) a calculadora universal</p>`)
+            document.write(`<p><span>Exercício 01</span> Olá <strong>${nome}</strong>! Bem-vindo(a) a calculadora universal</p>`)
         }
 
         saudacaoPersonalizada(nome)
@@ -38,7 +52,7 @@
             return eval(`${num1} ${operador} ${num2}`)
         }
 
-        document.write(`<p class="mensagem">O resultado da operação ${num1} ${operador} ${num2} é igual a ${operacaoMatematica(num1, operador, num2)}</p>`)
+        document.write(`<p><span>Exercício 02</span> O resultado da operação ${num1} ${operador} ${num2} é igual a ${operacaoMatematica(num1, operador, num2)}</p>`)
 
     //Exercicio 03
         const numero = 10
@@ -47,15 +61,15 @@
             return numero * 2
         }
 
-        document.write(`<p class="mensagem">O dobro de ${numero} é igual a ${calcularDobro(numero)}</p>`)
+        document.write(`<p><span>Exercício 03</span> O dobro de ${numero} é igual a ${calcularDobro(numero)}</p>`)
 
     //Exercicio 04
         const numero_metade = 2
         const calcularMetade = numero => numero / 2
 
-        document.write(`<p class="mensagem">A metade de ${numero_metade} é igual a ${calcularMetade(numero_metade)}</p>`)
+        document.write(`<p><span>Exercício 04</span> A metade de ${numero_metade} é igual a ${calcularMetade(numero_metade)}</p>`)
 
     //Exercicio 05
-        const calculadoraUniversal = (function(){document.write(`<p class="mensagem">Calculadora universal pronta para uso</p>`)})()
+        const calculadoraUniversal = (function(){document.write(`<p><span>Exercício 05</span> Calculadora universal pronta para uso</p>`)})()
 </script>
 </html>
