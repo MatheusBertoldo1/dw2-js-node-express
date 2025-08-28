@@ -12,7 +12,7 @@ document.write(`<p>Nosso vetor agora é ${vetor}</p><hr>`)
 vetor.push('Abacaxi')
 document.write(`<p>Nosso vetor, após o <b>push:</b> ${vetor}</p>`)
 
-//Usando método PUSH para inserir elemento no INICIO do vetor
+//Usando método UNSHIFT para inserir elemento no INICIO do vetor
 vetor.unshift('Laranja')
 document.write(`<p>Nosso vetor, após o <b>unshift:</b> é ${vetor}</p><hr>`)
 

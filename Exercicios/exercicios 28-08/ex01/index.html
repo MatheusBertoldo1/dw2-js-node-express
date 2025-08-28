@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Clientes 
+    {
+        constructor(nome, endereco, cpf)
+        {
+            this.nome = nome
+            this.endereco = endereco
+            this.cpf = cpf
+        }
+    }
+
+    const cliente01 = new Clientes("Matheus", "Rua Qualquer", "46372172896")
+    const cliente02 = new Clientes("Arthur", "Rua Nova", "12372172823")
+    const cliente03 = new Clientes("Guilherme", "Rua Sem Nome", "46371234596")
+    const cliente04 = new Clientes("Gustavo", "Rua Indefinida", "46371234596")
+    const cliente05 = new Clientes("João", "Rua Sem Entrada", "46371234596")
+
+    const listaClientes = [cliente01, cliente02, cliente03]
+
+    //Apresentando o array inicial
+    document.writeln(`<p><b>Array INICIAL</b></p>`)
+
+    listaClientes.forEach(element => {
+        document.write(`Nome: ${element.nome}. <br> Endereço: ${element.endereco}. <br> CPF: ${element.cpf}<hr>`)
+    });
+
+    //Adicionando elemento ao final do array
+    document.writeln(`<br><p><b>Adicionando elemento ao FINAL do array</b></p>`)
+    
+    listaClientes.push(cliente04)
+
+    listaClientes.forEach(element => {
+        document.write(`Nome: ${element.nome}. <br> Endereço: ${element.endereco}. <br> CPF: ${element.cpf}<hr>`)
+    });
+
+    //Adicionando elemento ao inicio do array
+    document.writeln(`<br><p><b>Adicionando elemento ao INÍCIO do array</b></p>`)
+    
+    listaClientes.unshift(cliente05)
+
+    listaClientes.forEach(element => {
+        document.write(`Nome: ${element.nome}. <br> Endereço: ${element.endereco}. <br> CPF: ${element.cpf}<hr>`)
+    });
+    
+</script>
+</html>
