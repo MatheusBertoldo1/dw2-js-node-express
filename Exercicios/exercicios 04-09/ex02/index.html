@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Heroi{
+        constructor(nome, vida, velocidade, forca){
+            this.nome = nome
+            this.vida = vida
+            this.velocidade = velocidade
+            this.forca = forca
+        }
+
+        correr(){
+            return write("O herói está correndo")
+        }
+
+        andar(){
+            return document.write("O herói está andando")
+        }
+
+        atacar(){
+            return document.write("O herói está atacando")
+        }
+
+        defender(){
+            return document.write("O herói está defendendo")
+        }
+    }
+
+    //Definindo os Heróis
+    const homem_aranha = new Heroi("Homem Aranha", 50, 60, 60)
+    const superman = new Heroi("Superman", 70, 80, 95)
+    const batman = new Heroi("Batman", 35, 50, 55)
+
+    //Adicinando métodos e atributos novos
+    homem_aranha.teia = 1
+    homem_aranha.sentidoAranha = () => "detectando um perigo"
+
+    superman.pode_voar = 1
+    superman.visaoCalor = () => "usando a visão de calor"
+
+    batman.esconder = 1
+    batman.investigar = () => "investigando um crime"
+
+    //Exibindo atributos dos heróis
+    document.write(`<p>O ${homem_aranha.nome} está ${homem_aranha.sentidoAranha()}</p> <hr>`)
+    document.write(`<p>O ${superman.nome} está ${superman.visaoCalor()}</p> <hr>`)
+    document.write(`<p>O ${batman.nome} está ${batman.investigar()}</p> <hr>`)
+</script>
+</html>
