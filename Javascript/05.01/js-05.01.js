@@ -28,6 +28,8 @@ dataAtual.setFullYear(dataAtual.getFullYear() + 4)
 
 document.writeln(`<p>Esse é novo o ano: ${dataAtual.getFullYear()}</p>`)
 
+
+
 //FORMATAÇÃO DE MOEDAS
 const salario = 2300
 const salarioReal = salario.toLocaleString("pt-br", {
