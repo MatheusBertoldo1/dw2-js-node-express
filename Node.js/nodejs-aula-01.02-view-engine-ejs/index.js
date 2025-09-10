@@ -18,12 +18,12 @@ app.get("/", (req, res) => {
 
 // ROTA PRODUTOS
 app.get("/produtos", (req, res) => {
-    res.send("<h1>Pagina Produtos</h1>")
+    res.render("produtos")
 })
 
 // ROTA CLIENTES
 app.get("/clientes", (req, res) => {
-    res.send("<h1>Pagina Clientes</h1>")
+    res.render("clientes")
 })
 
 // ------ SERVIDOR ------
