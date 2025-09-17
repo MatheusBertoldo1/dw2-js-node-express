@@ -9,5 +9,15 @@
     <h1>Página de produtos</h1>
     <hr>
     <a href="/">Home page</a>
+    <br>
+
+    <ul>
+        <% produtos.forEach(produto => { %>
+
+            <li>Produto: <%= produto.nome %></li>
+            <li>Preço: <%= produto.preco.toLocaleString("pt-br", {style: "currency", currency: "BRL"}) %><hr></li>
+
+        <% }) %>
+    </ul>
 </body>
 </html>
