@@ -57,6 +57,19 @@ app.get("/perfil", (req, res) => {
     })
 })
 
+app.get("/pedidos", (req, res) => {
+    const pedidos = [
+        {numero : 1, produto : "Celular", valor : 1500},
+        {numero : 2, produto : "Bolsa", valor : 85},
+        {numero : 3, produto : "Teclado", valor : 1500},
+    ]
+
+
+    res.render("pedidos", {
+        pedidos : pedidos
+    })
+})
+
 // ------ SERVIDOR ------
 // Iniciando o servidor HTTP na porta 8080
 const port = 8080

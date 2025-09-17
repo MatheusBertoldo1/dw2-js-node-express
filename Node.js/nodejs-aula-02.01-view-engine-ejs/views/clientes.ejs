@@ -9,30 +9,31 @@
 <body>
     <h1>Pagina de Clientes</h1>
     <hr>
-    <a href="/">Homepage</a>
     <h3>Lista de clientes</h3>
-
-    <table border="1">
+    
+    <table border="1" class="table table-bordered table-hover">
         <thead>
-            <tr>
+            <tr class="table-dark">
                 <th>Nome</th>
                 <th>CPF</th>
                 <th>Endereço</th>
             </tr>
         </thead>
         <tbody>
-
+            
             <% clientes.forEach( cliente => { %>
-
+                
                 <tr>
                     <td> <%= cliente.nome %> </td>
                     <td> <%= cliente.cpf %> </td>
                     <td> <%= cliente.endereco %> </td>
                 </tr>
-
-            <% }) %>
-
-        </tbody>
-    </table>
-</body>
-</html>
+                
+                <% }) %>
+                
+            </tbody>
+        </table>
+        <br>
+        <a href="/">Homepage</a>
+    </body>
+    </html>
