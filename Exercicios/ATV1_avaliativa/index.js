@@ -4,6 +4,9 @@ const express = require("express")
 //Variável app se torna uma instância da classe express
 const app = express()
 
+//Importando controllers
+import IndexController from "./controllers/IndexController.js"
+
 // Configurando o ejs
 app.set("view engine", "ejs")
 
