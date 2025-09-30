@@ -4,6 +4,12 @@ const express = require("express")
 //Variável app se torna uma instância da classe express
 const app = express()
 
+// Configurando o ejs
+app.set("view engine", "ejs")
+
+//Definindo a parta public para guardar arquivos estáticos
+app.use(express.static("public"))
+
 //O método listen torna o código um "ouvinte" e aguardando requisições HTTP do navegador
 app.listen(8080, function(error){
     if (error) 
@@ -12,6 +18,3 @@ app.listen(8080, function(error){
         console.log("Conexão realizada com sucesso")
 })
 
-app.get("/", function (req, res) {
-    res.send("<h1>Titulo da pagina</h1>")
-})

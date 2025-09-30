@@ -43,18 +43,12 @@ app.get("/perfil/:user", (req, res) => {
 //Iniciando o servidor HTTP
 const port = 8080; //O servidor escutará na porta 8080
 
-app.listen(
-  port,
-  (
-    error //o "error" ira capturar o erro que acontecer
-  ) => {
+app.listen(port, (error) => { //o "error" ira capturar o erro que acontecer
     if (error) {
-      console.log(
-        `Não foi possivel iniciar o servidor. Ocorreu um ERRO! ${error}`
-      );
-    } else {
-      console.log(`Servidor iniciado com sucesso em:
-            http://localhost:${port}`);
+      console.log(`Não foi possivel iniciar o servidor. Ocorreu um ERRO! ${error}`);
+    } 
+    else {
+      console.log(`Servidor iniciado com sucesso em: http://localhost:${port}`);
     }
   }
 );

@@ -22,8 +22,12 @@ router.get("/clientes", (req, res) => {
       CPF: "879.768.435-87",
       endereco: "Rua Pindamonhngaba, 600",
     },
-    { nome: "Raviel", CPF: "132.542.645-11", endereco: "Rua Lero Covas, 32" },
+    { nome: "Raviel", 
+      CPF: "132.542.645-11", 
+      endereco: "Rua Lero Covas, 32" 
+    },
   ];
+
   res.render("clientes", {
     clientes: clientes,
   });
