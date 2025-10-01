@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Serviços que prestamos</h1>
+<table>
+    <thead>
+        <td>
+            <td>Nome Produto</td>
+            <td>Preço</td>
+            <td>Quantidade em estoque</td>
+        </td>
+    </thead>
+    <tbody>
+        <% servicos.forEach(servico => { %>
+            <tr>
+                <td> <%= servico.nomeServico %> </td>
+                <td> <%= servico.preco %> </td>
+                <td> <%= servico.tempoHorasServico %> </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%- include("partials/footer.ejs") %>

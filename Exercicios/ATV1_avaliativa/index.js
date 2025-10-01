@@ -1,11 +1,19 @@
 //Variável express importando o módulo Express
-const express = require("express")
+import express from "express"
 
 //Variável app se torna uma instância da classe express
 const app = express()
 
 //Importando controllers
 import IndexController from "./controllers/IndexController.js"
+import ProdutosController from "./controllers/ProdutosController.js"
+import ClientesController from "./controllers/ClientesController.js"
+import ServicosController from "./controllers/ServicosController.js"
+
+app.use("/", IndexController)
+app.use("/produtos", ProdutosController)
+app.use("/servicos", ServicosController)
+app.use("/clientes", ClientesController)
 
 // Configurando o ejs
 app.set("view engine", "ejs")

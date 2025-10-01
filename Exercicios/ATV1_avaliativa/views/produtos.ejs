@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+
+<h1>Produtos disponíveis</h1>
+<table>
+    <thead>
+        <th>
+            <td>Nome Produto</td>
+            <td>Preço</td>
+            <td>Quantidade em estoque</td>
+        </th>
+    </thead>
+    <tbody>
+        <% produtos.forEach(produto => { %>
+            <tr>
+                <td> <%= produto.nomeProduto %> </td>
+                <td> <%= produto.preco %> </td>
+                <td> <%= produto.quantidadeEstoque %> </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+<%- include("partials/footer.ejs") %>
