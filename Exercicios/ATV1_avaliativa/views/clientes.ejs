@@ -4,13 +4,13 @@
 <div>
 <h1>Lista de clientes</h1>
 
-<table>
-    <thead>
-        <th>
-            <td>Nome</td>
-            <td>Idade</td>
-            <td>Email</td>
-        </th>
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Email</th>
+        </tr>
     </thead>
     <tbody>
         <% clientes.forEach( cliente => {%>

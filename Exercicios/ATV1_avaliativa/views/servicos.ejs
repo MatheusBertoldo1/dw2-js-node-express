@@ -1,13 +1,14 @@
 <%- include("partials/header.ejs") %>
 
 <h1>Serviços que prestamos</h1>
-<table>
-    <thead>
-        <td>
-            <td>Nome Produto</td>
-            <td>Preço</td>
-            <td>Quantidade em estoque</td>
-        </td>
+
+<table class="table table-bordered table-hover">
+    <thead class="table-dark">
+        <tr>
+            <th>Nome Produto</th>
+            <th>Preço</th>
+            <th>Quantidade em estoque</th>
+        </tr>
     </thead>
     <tbody>
         <% servicos.forEach(servico => { %>
