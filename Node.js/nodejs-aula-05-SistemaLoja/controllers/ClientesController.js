@@ -1,63 +1,80 @@
 import express from "express";
-import Clientes from "../models/Cliente.js";
-
 const router = express.Router();
-
+import Cliente from "../models/Cliente.js";
+ 
 // ROTA CLIENTES
 router.get("/clientes", function (req, res) {
-  //SELECT * FROM 
-  Clientes.findAll().then(clientes => {
-    res.render("clientes", {
-      clientes: clientes
-    });
-  })
+  // SELECT * FROM CLIENTES -> essa promessa vai retornar um pacote de dados
+  Cliente.findAll().then((clientes) => { // then : promessa bem sucedida
+      res.render("clientes", {
+        clientes : clientes,  //  envia a lista de clientes do banco de dados para a view
+      });
+  }).catch(error => { //  catch : falha na resolução da promessa
+    console.log(error); //  printa o erro no console
+  });
+ 
 });
-
-//  ROTA CADASTRO CLIENTES
+ 
+//  ROTA CADASTRO CLIENTES : método POST
 router.post("/clientes/new", (req,res) =>{
   // COLETANDO OS DADOS NO FORMULÁRIO
-  const nome = req.body.nome; //  variável = req.
+  const nome = req.body.nome; //  variável = req.body.inputName
   const cpf = req.body.cpf;
-  const endereco = req.body.endereco
-
-  Clientes.create({
-    nome: nome,
-    cpf: cpf,
-    endereco: endereco
-  }).then(() => {
-    res.redirect("/clientes")
+  const endereco = req.body.endereco;
+  //  CADASTRANDO OS CLIENTES
+  Cliente.create({
+    nome : nome, // coluna : variavel
+    cpf : cpf,
+    endereco : endereco
+  }).then(()=>{
+    res.redirect("/clientes"); // redireciona para a rota clientes
   }).catch(error => {
-    console.log(error)
+    console.log(error);
+  });
+});
+ 
+//  ROTA DE EXCLUSÃO DE CLIENTES : recebe o parâmetro obrigatório ID
+router.get("/clientes/delete/:id", (req,res) => {
+  const id = req.params.id; // variavel = req.params.nomeParametro
+  Cliente.destroy({ // .destroy() exclui um registro no banco de dados
+    where: {
+      id: id,  // where { id banco = id variavel }
+    }
+  }).then(()=>{
+    res.redirect("/clientes");
+  }).catch(error => {
+    console.log(error);
   })
 });
-
-// ROTA DE EXCLUSÃO DE DADOS
-// :id é um parâmetro obrigatório
-router.get("/clientes/delete/:id", (req, res) => {
-  const id = req.params.id
-
-  // .destroy -> exclui um registro do banco
-  Clientes.destroy({
-    where:{
-      id: id
-    }
-  }).then(() => {
-    res.redirect("/clientes")
-  }).catch(error => {
-    console.log(error)
-  })
-})
-
-// ROTA DE EDIÇÃO DE CLIENTES
-router.get("/clientes/edit/:id", (req, res) => {
-  const id = req.params.id
-
-  //Buscando o cliente pelo ID
-  Clientes.findByPk(id).then(cliente => {
+ 
+//  ROTA DE EDIÇÃO DE CLIENTES : recebe o parâmetro obrigatório ID
+router.get("/clientes/edit/:id", (req,res) => {
+  //  Buscando o cliente pela ID
+  const id = req.params.id;
+  Cliente.findByPk(id).then( cliente =>{  // .findByPk() busca um registro pela chave primária | Se achar o ID, envia os dados que retornaram no findByPk para a página clientesEdit
     res.render("clientesEdit", {
-      cliente: cliente
+      cliente : cliente,
     })
   })
-})
-
+});
+ 
+//  ROTA DE ALTERAÇÃO DE CLIENTES : post pois recebe dados de formulário
+router.post("/clientes/update", (req,res) => {
+  const id = req.body.id;
+  const nome = req.body.nome;
+  const cpf = req.body.cpf;
+  const endereco = req.body.endereco;
+  Cliente.update({ // método update atualiza os dados de um registro a partir de um objeto
+    nome : nome,
+    cpf : cpf,
+    endereco : endereco
+  },{
+    where : {id : id} //  where da consulta
+  }).then(()=>{
+    res.redirect("/clientes");
+}).catch(error =>{
+    console.log(error);
+});
+});
+ 
 export default router;
