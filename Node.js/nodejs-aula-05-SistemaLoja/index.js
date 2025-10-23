@@ -7,14 +7,6 @@ import connection from "./config/sequelize-config.js";
 // Iniciando o Express na variável app
 const app = express();
 
-// Importando os Controllers (onde estão as rotas)
-import ClientesController from "./controllers/ClientesController.js";
-import ProdutosController from "./controllers/ProdutosController.js";
-import PedidosController from "./controllers/PedidosController.js";
-
-// Configurando o express para permitir o recebimento de dados vindos de formulários
-app.use(express.urlencoded({extended: false}))
-
 // Define o EJS como Renderizador de páginas
 app.set("view engine", "ejs");
 
@@ -25,6 +17,14 @@ app.use(express.static("public"));
 app.use("/", ClientesController);
 app.use("/", ProdutosController);
 app.use("/", PedidosController);
+
+// Configurando o express para permitir o recebimento de dados vindos de formulários
+app.use(express.urlencoded({extended: false}))
+
+// Importando os Controllers (onde estão as rotas)
+import ClientesController from "./controllers/ClientesController.js";
+import ProdutosController from "./controllers/ProdutosController.js";
+import PedidosController from "./controllers/PedidosController.js";
 
 // Realizando a conexao com o banco de dados
 connection.authenticate().then(() => {
@@ -38,8 +38,6 @@ connection.query(`create database if not exists nossaloja`).then(() => console.l
 
 //Importando o model 
 import Clientes from "./models/Cliente.js";
-
-
 
 // ROTA PRINCIPAL
 app.get("/", function (req, res) {
