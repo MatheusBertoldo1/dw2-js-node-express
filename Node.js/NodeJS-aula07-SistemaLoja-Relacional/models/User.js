@@ -1,5 +1,5 @@
 import Sequelize from 'sequelize'
-import connection  from '../config/sequelize-config'
+import connection  from '../config/sequelize-config.js'
 
 const User = connection.define('users', {
     email: {
@@ -12,5 +12,5 @@ const User = connection.define('users', {
     }
 })
 
-user.sync({force : false})
+// user.sync({force : false})
 export default User

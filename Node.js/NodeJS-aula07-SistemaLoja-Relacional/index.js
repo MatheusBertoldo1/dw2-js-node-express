@@ -2,6 +2,18 @@
 import express from "express";
 // Iniciando o Express
 const app = express();
+
+// Importando o Express Session (gerdor de sessões)
+import session from "express-session"
+
+// Configurando e Express Session
+app.use(session({
+  secret: "minhaloja",
+  cookie: {maxAge : 3600000}, // Tempo de duração da sessão
+  saveUninitialized: false,
+  resave: false
+}))
+
 // Importando o Sequelize
 import connection from "./config/sequelize-config.js";
 // Importando os Controllers
