@@ -34,7 +34,7 @@ connection.authenticate().then(() => {
 })
 
 //Criando o banco de dados (se ele ainda não existir)
-connection.query(`create database if not exists nossaloja`).then(() => console.log("Banco criado")).catch(error => console.log(error))
+connection.query(`create database if not exists atv2_avaliativa`).then(() => console.log("Banco criado")).catch(error => console.log(error))
 
 //Importando o model 
 import Clientes from "./models/Cliente.js";

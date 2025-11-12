@@ -1,0 +1,49 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+    <form action="/clientes/create" method="POST" class="form-novo-cliente">
+        
+        <h2>Cadastrar Novo Cliente</h2>
+
+        <div class="form-group">
+            <label for="nome">Nome Completo:</label>
+            <input 
+                type="text" 
+                id="nome" 
+                name="nome" 
+                placeholder="Digite o nome do cliente"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input 
+                type="number" 
+                id="idade" 
+                name="idade" 
+                placeholder="Idade do cliente"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="email@exemplo.com"
+                required
+            >
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
+            <a href="/clientes" class="btn btn-secondary">Cancelar</a> 
+        </div>
+
+    </form>
+</main>
+
+<%- include("partials/footer.ejs") %>

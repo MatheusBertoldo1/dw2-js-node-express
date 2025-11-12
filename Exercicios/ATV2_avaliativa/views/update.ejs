@@ -1,0 +1,46 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+    <form action="/clientes/update/<%= cliente.id %>" method="POST" >
+        
+        <h2>Alterar Dados de <%= cliente.nome %></h2>
+
+        <label for="nome">Nome:</label>
+        <input 
+            type="text" 
+            id="nome" 
+            name="nome" 
+            value="<%= cliente.nome %>" 
+            required
+        >
+
+        <div class="form-group">
+            <label for="idade">Idade:</label>
+            <input 
+                type="number" 
+                id="idade" 
+                name="idade" 
+                value="<%= cliente.idade %>" 
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                value="<%= cliente.email %>" 
+                required
+            >
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-salvar">Salvar Alterações</button>
+            <a href="/clientes" class="btn btn-cancelar">Cancelar</a> 
+        </div>
+    </form>
+</main>
+
+<%- include("partials/footer.ejs") %>

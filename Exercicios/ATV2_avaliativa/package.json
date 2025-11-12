@@ -1,0 +1,24 @@
+{
+  "name": "atv1_avaliativa",
+  "version": "1.0.0",
+  "description": "Atividade avaliativa prototipo site com node e express",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon index.js"
+  },
+  "keywords": [
+    "node",
+    "web",
+    "express"
+  ],
+  "author": "Matheus Bertoldo de Oliveira",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11",
+    "sequelize": "^6.37.7"
+  },
+  "type": "module"
+}
